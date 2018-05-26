@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>North Hollywood Church</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   
+    <link rel = "stylesheet" type = "text/css" href = "../css/style.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Pacifico|Roboto+Condensed" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+
+
+</head>
+
+<body>
+
+    <div class = "row space"></div>
+
+    <div class = "container " style="border:2pt">
+
+        <div class = "row space"></div>
+        <div class = "row text-center">
+                <section class="col-1"></section>
+                <section class = "col-12 col-md-8  text-center color-white mt-5 text-roboto header bgimg">
+                        <h1 class = "display-3 text-roboto " style = "font-weight: bold">Friend Finder</h1>
+                        <p class = "lead text-roboto">Find Your Best Match</p>
+                </section>
+        </div>
+        <!-- <div clas="row">
+            <div class="col-4"></div>
+            <div class = "col-7 jumbotron text-center color-white text-roboto header bgimg ml-5  mt-5 pl-5 w-75">
+                <h1 class = "display-3" style = "font-weight: bold">Friend Finder</h1>
+                <p class = "lead">Find Your Best Match</p>
+            </div>
+            <div class="col-1"> </div>
+        </div> -->
+        <div class = "row">
+            <section class="col-1"></section>
+            <section class = "col-12 col-md-8 mt-4" >
+                <form>
+                    <div class="form-group">
+                        <div><label for="name">Name: </label></div>        
+                        <div><input type="input"  class="form-control" id="name" placeholder="Enter your name"></div>
+                        <hr class = "my-4">
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            <label for="pwd">Select your Photo:  </label>
+                        </div>
+                        <div>
+                            <input type="file"id="pic" accept="image/*">
+                        </div> 
+                        <hr class = "my-4">
+                    </div>
+                    <div class="form-group">
+                        <div><label for="question1">1. Are you an outgoing person?</label></div>
+                        <div class="ml-3">
+                            <select id="answer1">
+                                <option value="1">Strongly Agree</option>
+                                <option value="2">Agree </option>
+                                <option value="3">Neutral</option>
+                                <option value="4">Disagree </option>
+                                <option value="5">Strongly Disagree</option>
+                                                
+                            </select>
+                        </div>
+                        <hr class = "my-4">
+                    </div>
+                    <div class="form-group">
+                        <div><label for="question2">2. Do you believe in love at first sight?</label></div>
+                            <div>
+                                <select id="answer2">
+                                    <option value="1">Strongly Agree</option>
+                                    <option value="2">Agree </option>
+                                    <option value="3">Neutral</option>
+                                    <option value="4">Disagree </option>
+                                    <option value="5">Strongly Disagree</option>
+                                </select>
+                            </div>
+                            <hr class = "my-4">
+                    </div>
+                    <div class="form-group">
+                        <div><label for="question3">3. Are you romantic?</label></div>
+                            <div>
+                                <select id="answer3">
+                                    <option value="1">Strongly Agree</option>
+                                    <option value="2">Agree </option>
+                                    <option value="3">Neutral</option>
+                                    <option value="4">Disagree </option>
+                                    <option value="5">Strongly Disagree</option>
+                                </select>
+                            </div>
+                            <hr class = "my-4">
+                    </div>
+                    <div class="form-group">
+                        <div><label for="question4">4. Are you an adventurous person?</label></div>
+                            <div>
+                                <select id="answer4">
+                                    <option value="1">Strongly Agree</option>
+                                    <option value="2">Agree </option>
+                                    <option value="3">Neutral</option>
+                                    <option value="4">Disagree </option>
+                                    <option value="5">Strongly Disagree</option>
+                                </select>
+                            </div>
+                            <hr class = "my-4">
+                    </div>   
+                    <div class="form-group">
+                        <div><label for="question5">5. How much do you like to see new places in the world?</label></div>
+                            <div>
+                                <select id="answer5">
+                                    <option value="1">Strongly Agree</option>
+                                    <option value="2">Agree </option>
+                                    <option value="3">Neutral</option>
+                                    <option value="4">Disagree </option>
+                                    <option value="5">Strongly Disagree</option>
+                                </select>
+                            </div>
+                            <hr class = "my-4">
+                    </div> 
+                    <div class="form-group">
+                        <div><label for="question6">6. Are you sarcastic person?</label></div>
+                            <div>
+                                <select id="answer6">
+                                    <option value="1">Strongly Agree</option>
+                                    <option value="2">Agree </option>
+                                    <option value="3">Neutral</option>
+                                    <option value="4">Disagree </option>
+                                    <option value="5">Strongly Disagree</option>>
+                                </select>
+                            </div>
+                            <hr class = "my-4">
+                    </div>
+                    <div class="form-group">
+                        <div><label for="question7">7. How much do you consider yourself as an old fashioned person?</label></div>
+                            <div>
+                                <select id="answer7">
+                                    <option value="1">Strongly Agree</option>
+                                    <option value="2">Agree </option>
+                                    <option value="3">Neutral</option>
+                                    <option value="4">Disagree </option>
+                                    <option value="5">Strongly Disagree</option>
+                                </select>
+                            </div>
+                            <hr class = "my-4">
+                    </div>  
+                    <div class="form-group">
+                        <div><label for="question8">8. Do you like music?</label></div>
+                            <div>
+                                <select id="answer8">
+                                    <option value="1">Strongly Agree</option>
+                                    <option value="2">Agree </option>
+                                    <option value="3">Neutral</option>
+                                    <option value="4">Disagree </option>
+                                    <option value="5">Strongly Disagree</option>
+                                </select>
+                            </div>
+                            <hr class = "my-4">
+                    </div> 
+                    <div class="form-group">
+                        <div><label for="question9">9. Do you like work out and exercise?</label></div>
+                            <div>
+                                <select id="answer9">
+                                    <option value="1">Strongly Agree</option>
+                                    <option value="2">Agree </option>
+                                    <option value="3">Neutral</option>
+                                    <option value="4">Disagree </option>
+                                    <option value="5">Strongly Disagree</option>
+                                </select>
+                            </div>
+                            <hr class = "my-4">
+                    </div>
+                    <div class="form-group">
+                        <div><label for="question10">10. Are you intrested in pets?</label></div>
+                            <div>
+                                <select id="answer10">
+                                    <option value="1">Strongly Agree</option>
+                                    <option value="2">Agree </option>
+                                    <option value="3">Neutral</option>
+                                    <option value="4">Disagree </option>
+                                    <option value="5">Strongly Disagree</option>
+                                </select>
+                            </div>
+                            <hr class = "my-4">
+                    </div>
+                    <div class = "row space"></div>
+                    <div class = "row space"></div>
+                    <div class = "row space"></div>
+                    <div class = "row space"></div>    
+                    <div>
+                            <button type="submit" id="submitNewFriend" class="btn btn-secondary">Submit</button>
+                            
+                            
+                            <div id="id01" class="w3-modal">
+                                <div class="w3-modal-content">
+                                    <div class="w3-container" id="test">
+                                        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                                            <div id = "name"><p id="showName"></p></div>
+                                            <div id = "image"></div>
+                                    </div>
+                                </div>
+                            </div> 
+                    </div>    
+               </form>
+                <div class = "row space"></div>
+                <div class = "row space"></div>
+                <div class = "row space"></div>
+                <div class = "row space"></div>
+               <div>
+                    <a href="/api/friends">API Friends</a>
+            </div>
+            </section>
+
+            <section class = "col-1"></section>
+
+            <section class = "col-md-3 col-12 d-flex flex-column justify-content-around text-robCondensed">
+                
+               
+
+            </section>
+        </div>
+  
+
+        <div class = "row space"></div>
+        <div class = "row space"></div>
+        
+        <div class = "row space"></div>
+
+        <div class = "row space"></div>
+        <div class = "row space"></div>
+        <!-- <div class = "row space"></div>
+        <div class = "row space"></div> -->
+
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        let currentFriends;
+
+        function findFriends(){
+            const currentURL = window.location.origin;
+            $.ajax({
+                url: currentURL+ "/api/friends",
+                method: "GET"
+                }).then(function(friendsList){
+                    console.log(friendsList);
+                    currentFriends  = friendsList;
+            });
+            console.log("in gety",currentFriends);
+            //return currentFriends;
+        }
+
+
+        $("#submitNewFriend").on("click", function(event){
+    
+            event.preventDefault(); 
+            let newName=$('#name').val().trim();
+            let newPic = $('#pic').val();
+            let newAnswer1 = parseInt($('#answer1').val());
+            let newAnswer2 = parseInt($('#answer2').val());
+            let newAnswer3 = parseInt($('#answer3').val());
+            let newAnswer4 = parseInt($('#answer4').val());
+            let newAnswer5 = parseInt($('#answer5').val());
+            let newAnswer6 = parseInt($('#answer6').val());
+            let newAnswer7 = parseInt($('#answer7').val());
+            let newAnswer8 = parseInt($('#answer8').val());
+            let newAnswer9 = parseInt($('#answer9').val());
+            let newAnswer10 =parseInt($('#answer10').val());
+ 
+            const newFriend = {
+                name:newName,
+                photo:newPic,
+                scores:[
+                newAnswer1,
+                newAnswer2,
+                newAnswer3,
+                newAnswer4,
+                newAnswer5,
+                newAnswer6,
+                newAnswer7,
+                newAnswer8,
+                newAnswer9,
+                newAnswer10
+                ]
+            };
+
+            console.log(newFriend);
+            $.post("api/friends",newFriend,function(data){
+                if(data){
+                    //currentFriends = findFriends();
+                    console.log("in post",data );
+                    console.log("currentFirends",currentFriends);
+                    let sumArr=[];
+                    for(let i=0;i<currentFriends.length;i++){
+                        let diff1=Math.abs(newAnswer1-currentFriends[i].scores[0]);
+                        let diff2=Math.abs(newAnswer2-currentFriends[i].scores[1]);
+                        let diff3=Math.abs(newAnswer3-currentFriends[i].scores[2]);
+                        let diff4=Math.abs(newAnswer4-currentFriends[i].scores[3]);
+                        let diff5=Math.abs(newAnswer5-currentFriends[i].scores[4]);
+                        let diff6=Math.abs(newAnswer6-currentFriends[i].scores[5]);
+                        let diff7=Math.abs(newAnswer7-currentFriends[i].scores[6]);
+                        let diff8=Math.abs(newAnswer8-currentFriends[i].scores[7]);
+                        let diff9=Math.abs(newAnswer9-currentFriends[i].scores[8]);
+                        let diff10=Math.abs(newAnswer10-currentFriends[i].scores[9]);
+                        console.log(diff1+" "+diff2+" "+diff3+" "+diff4+" "+diff5+" "+diff6+" "+diff7+" "
+                        +diff8+" "+diff9+" "+diff10+" "+newAnswer10 +currentFriends[i].scores[9]);
+                        let sumofDifs=diff1+diff2+diff3+diff4+diff5+diff6+diff7+diff8+diff9+diff10;
+                        console.log("sum: "+sumofDifs)
+                        sumArr.push(sumofDifs);
+                       
+                    } console.log("sumArr",sumArr);
+                    let index=0;
+                    for(let i=0;i<currentFriends.length;i++){
+                        let max=0;
+             
+                        if(sumArr[i]>max){
+                        max=sumArr[i];
+                        index=i;
+                        }
+                    }
+                    console.log()
+                    alert(currentFriends[index].name);
+                    document.getElementById('id01').style.display='block';
+                    let p = $('#showName');
+                    p.text(currentFriends[index].name);
+                    let divImage = $("#image");
+                    let newImg = $('<img>');
+                    newImg.attr('src',currentFriends[index].photo);
+                    newImg.attr('width', '120');
+                    newImg.attr('length', '120');
+                    divImage.append(newImg);
+         
+                    $('#name').val("");
+                    $('#pic').val("");
+                    $('#answer1').val("");
+                    $('#answer2').val("");
+                    $('#answer3').val("");
+                    $('#answer4').val("");
+                    $('#answer5').val("");
+                    $('#answer6').val("");
+                    $('#answer7').val("");
+                    $('#answer8').val("");
+                    $('#answer9').val("");
+                    $('#answer10').val("");
+ 
+                }
+            });
+        });
+
+        findFriends();
+
+    </script>
+</body>
+</html>
