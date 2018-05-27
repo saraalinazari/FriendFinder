@@ -3,15 +3,14 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>North Hollywood Church</title>
+    <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
    
-    <link rel = "stylesheet" type = "text/css" href = "../css/style.css">
+    <link rel = "stylesheet" type = "text/css" href = "css/style.css">
 
     <link href="https://fonts.googleapis.com/css?family=Pacifico|Roboto+Condensed" rel="stylesheet">
-    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
-   
+    
 
 
 </head>
@@ -22,32 +21,35 @@
 
     <div class = "container " style="border:2pt">
 
-        <div class = "row space"></div>
-        <div class = "row">
-                <section class="col-1"></section>
-                <section class = "col-12 col-md-8  text-center color-white mt-5 text-roboto header bgimg">
+        <div class = "row d-flex justify-content-center"></div>
+        <div class = "row d-flex justify-content-center">
+                <!-- <section class="col-1"></section> -->
+                <section class = "col-12 col-md-8  text-center color-white mt-5 text-roboto header " id="bgimg">
                         <h1 class = "display-3" style = "font-weight: bold">Friend Finder</h1>
                         <p class = "lead">Find Your Best Match</p>
                 </section>
         </div>
         
         <div class = "row">
-            <section class="col-1"></section>
-            <section class = "col-12 col-md-8 mt-4" >  
+            <!-- <section class="col-1"></section> -->
+            <section class = "col-12  mt-4 d-flex justify-content-center" >  
                 <!-- <a href="/survey">API Table Link</a></section> -->
-                <form>
+                <!-- <form> -->
                      
-                    <button method="Get" action="/survey"> <a href="/survey">Fill Out your Survey to Find Who is your best match </a></button>
-
-                </form>
+                    <!-- <button class="btn btn-secondary" method="Get" action="/survey"> <a href="/survey">Fill Out your Survey to Find Who is your best match </a></button> -->
+                    <a href="/survey">
+                        <button type="button" class="btn btn-lg btn-secondary">
+                            <h4><i class="fa fa-arrow-right" aria-hidden="true"></i> Go to Survey</h4></button>
+                    </a>
+                <!-- </form> -->
                 
-            <section class = "col-1"></section>
+            <!-- <section class = "col-1"></section> -->
 
-            <section class = "col-md-3 col-12 d-flex flex-column justify-content-around text-robCondensed">
+            <!-- <section class = "col-md-3 col-12 d-flex flex-column justify-content-around text-robCondensed">
                 
                
 
-            </section>
+            </section> -->
         </div>
   
 

@@ -3,14 +3,14 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>North Hollywood Church</title>
+    <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
    
-    <link rel = "stylesheet" type = "text/css" href = "../css/style.css">
+    <link rel = "stylesheet" type = "text/css" href = "css/style.css">
 
     <link href="https://fonts.googleapis.com/css?family=Pacifico|Roboto+Condensed" rel="stylesheet">
-    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script> -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
 
 
@@ -23,13 +23,14 @@
     <div class = "container " style="border:2pt">
 
         <div class = "row space"></div>
-        <div class = "row text-center">
-                <section class="col-1"></section>
-                <section class = "col-12 col-md-8  text-center color-white mt-5 text-roboto header bgimg">
-                        <h1 class = "display-3 text-roboto " style = "font-weight: bold">Friend Finder</h1>
-                        <p class = "lead text-roboto">Find Your Best Match</p>
-                </section>
-        </div>
+        
+        <div class = "row d-flex justify-content-center">
+            <!-- <section class="col-1"></section> -->
+            <section class = "col-12 col-md-8  text-center color-white mt-5 text-roboto header " id="bgimg">
+                    <h1 class = "display-3 text-roboto" style = "font-weight: bold">Friend Finder</h1>
+                    <p class = "lead">Find Your Best Match</p>
+            </section>
+    </div>
         <!-- <div clas="row">
             <div class="col-4"></div>
             <div class = "col-7 jumbotron text-center color-white text-roboto header bgimg ml-5  mt-5 pl-5 w-75">
@@ -38,11 +39,11 @@
             </div>
             <div class="col-1"> </div>
         </div> -->
-        <div class = "row">
-            <section class="col-1"></section>
-            <section class = "col-12 col-md-8 mt-4" >
+        <div class = "row ">
+            <!-- <section class="col-1"></section> -->
+            <section class = "col-12 col-md-8 mt-4 d-flex justify-content-center ml-5" >
                 <form>
-                    <div class="form-group">
+                    <div class="form-group ">
                         <div><label for="name">Name: </label></div>        
                         <div><input type="input"  class="form-control" id="name" placeholder="Enter your name"></div>
                         <hr class = "my-4">
@@ -195,12 +196,16 @@
                             <button type="submit" id="submitNewFriend" class="btn btn-secondary">Submit</button>
                             
                             
-                            <div id="id01" class="w3-modal">
-                                <div class="w3-modal-content">
-                                    <div class="w3-container" id="test">
+                            <div id="id01" class="w3-modal ">
+                                <div class="w3-modal-content d-flex justify-content-center">
+                                    <div class="w3-container  w-30" id="test" >
                                         <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-                                            <div id = "name"><p id="showName"></p></div>
-                                            <div id = "image"></div>
+                                            <div id="tempDiv" class="d-flex" >
+                                                <div id="showRec"></div>
+                                                <!-- <div id = "name1" ><p id="showName"></p></div>
+                                                <div id = "image"></div> -->
+                                            </div>
+                                            
                                     </div>
                                 </div>
                             </div> 
@@ -210,9 +215,9 @@
                 <div class = "row space"></div>
                 <div class = "row space"></div>
                 <div class = "row space"></div>
-               <div>
+               <!-- <div>
                     <a href="/api/friends">API Friends</a>
-            </div>
+            </div> -->
             </section>
 
             <section class = "col-1"></section>
@@ -223,7 +228,9 @@
 
             </section>
         </div>
-  
+        <div class="row">
+            <a href="/api/friends">API Friends</a>
+        </div>
 
         <div class = "row space"></div>
         <div class = "row space"></div>
@@ -315,26 +322,76 @@
                         sumArr.push(sumofDifs);
                        
                     } console.log("sumArr",sumArr);
-                    let index=0;
-                    for(let i=0;i<currentFriends.length;i++){
-                        let max=0;
-             
-                        if(sumArr[i]>max){
-                        max=sumArr[i];
-                        index=i;
+                    let index=0; let min=0;
+                    let tempArr=[];
+                    for(let i=0;i<sumArr.length;i++){
+                        tempArr.push(sumArr[i]);
+                    }
+                    tempArr.sort();
+                    console.log(tempArr);
+                    console.log("tempArr[0] "+tempArr[0]);
+                    let i=0;
+                    let indexArr=[];
+                    for( i=0;i<sumArr.length;i++){
+                        console.log("i"+i+"sumArr"+sumArr[i]);
+                        
+                        if(sumArr[i]===tempArr[0]){
+                            index = i ;indexArr.push(i);
                         }
                     }
-                    console.log()
+                   
+                    console.log("index"+index );
                     alert(currentFriends[index].name);
                     document.getElementById('id01').style.display='block';
-                    let p = $('#showName');
-                    p.text(currentFriends[index].name);
-                    let divImage = $("#image");
-                    let newImg = $('<img>');
-                    newImg.attr('src',currentFriends[index].photo);
-                    newImg.attr('width', '120');
-                    newImg.attr('length', '120');
-                    divImage.append(newImg);
+                    for(let i=0;i<indexArr.length;i++){
+                        let newUl = $('<Ul>');
+                        let newLiName = $('<li>');
+                        newLiName.append(currentFriends[indexArr[i]].name);
+                        let newLiImg = $('<li>');
+                        let newImg1= $('<img>');
+                        newImg1.attr('src',currentFriends[indexArr[i]].photo);
+                        newImg1.attr('width', '150');
+                        newImg1.attr('length', '150');
+                        newLiImg.append(newImg1);
+                        newUl.append(newLiName);
+                        newUl.append(newImg1);
+                        let divShowRec = $('#showRec');
+                        divShowRec.append(newUl);
+
+                    //    let mainDiv =  $('<div>');
+                    //    let pShowName = $('#showName');
+                    //    let divName1=$('#name1');
+                    //    pShowName.append(currentFriends[indexArr[i]].name);
+                    //    divName1.append(pShowName);
+                       
+                    //     let divImage = $("#image");
+                    //     let newImg = $('<img>');
+                    //     newImg.attr('src',currentFriends[indexArr[i]].photo);
+                    //     newImg.attr('width', '150');
+                    //     newImg.attr('length', '150');
+                    //     divImage.append(newImg);
+
+                    //     let tempDiv = $('#tempDiv');
+                       
+                    //     tempDiv.append(divName1);
+                    //     tempDiv.append(divImage);
+                    //     mainDiv.append(divName1);
+                    //     mainDiv.append(divImage);
+                    //     tempDiv.append(mainDiv);
+
+                        
+
+
+                    }
+                    
+                    // let p = $('#showName');
+                    // p.append(currentFriends[index].name);
+                    // let divImage = $("#image");
+                    // let newImg = $('<img>');
+                    // newImg.attr('src',currentFriends[index].photo);
+                    // newImg.attr('width', '150');
+                    // newImg.attr('length', '150');
+                    // divImage.append(newImg);
          
                     $('#name').val("");
                     $('#pic').val("");
@@ -348,6 +405,9 @@
                     $('#answer8').val("");
                     $('#answer9').val("");
                     $('#answer10').val("");
+
+                    // $('#image').empty();
+                    // $('#showName').empty();
  
                 }
             });

@@ -1,6 +1,6 @@
 var friendsArray = [{
     name:"Ahmed",
-    photo:"https://iqtravel.us/images/2018/04/good-looking-guy-haircuts-awesome-6-smart-looking-men-hairstyles-2017-of-good-looking-guy-haircuts.jpg",
+    photo:"data/images/first.jpg",
     scores:[
         5,
         1,
@@ -15,7 +15,7 @@ var friendsArray = [{
       ]},
   {
     name:"Micheal",
-    photo:"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+    photo:"data/images/second.jpg",
     scores:[
         5,
         3,
@@ -30,7 +30,7 @@ var friendsArray = [{
   },
   {
     name:"Rose",
-    photo:"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+    photo:"data/images/third.jpg",
     scores:[
         3,
         2,
@@ -46,7 +46,7 @@ var friendsArray = [{
   },
   {
     name:"Jesus",
-    photo:"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+    photo:"data/images/fourth.jpg",
     scores:[
         4,
         1,
@@ -62,7 +62,7 @@ var friendsArray = [{
   },
   {
     name:"Melody",
-    photo:"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+    photo:"data/images/fifth.jpg",
     scores:[
         5,
         1,
@@ -78,7 +78,7 @@ var friendsArray = [{
   },
   {
     name:"Frank",
-    photo:"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+    photo:"data/images/sixth.jpg",
     scores:[
         5,
         5,
