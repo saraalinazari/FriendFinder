@@ -1,5 +1,11 @@
 # FriendFinder
 
+## Requirement
+- build a compatibility-based "FriendFinder" application -- basically a dating app.
+- This full-stack site will take in results from your users' surveys, then compare their answers with those from other users.
+- The app will then display the name and picture of the user with the best overall match. 
+
+## Instructions
 If you feel alone or need new people to meet, FriendFinder helps you to find friends that are matched with you.
 You can see their name and picture after you fill out the survey. Also, you can see list of possible friends by clicking on the button at the bottom of page. 
 
@@ -13,3 +19,20 @@ You can see the live project through this link: [FriendFinder](https://aqueous-f
 Afer filling out all questions and clicking submit button, user can see the name and the picture of people who have the best match with user's interests. You can see the screen of showing all best matches in the picture below:
 
 ![Matches](app/data/images/screen3.jpg)
+
+## Technologies Used
+- Node.js
+- Express.js NPM Package
+- Body Parser NPM Package
+- Path NPM Package
+- Heroku
+
+##Code Explanation
+### Lesson Learned
+- How to create a full stack application with Node.js and use Express.js.
+- How to deply an application in Heroku.
+- How to using routing in an application.
+
+## Authors
+- Sara Alinazari
+

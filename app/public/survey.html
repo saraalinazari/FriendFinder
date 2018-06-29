@@ -5,12 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
     <link rel = "stylesheet" type = "text/css" href = "css/style.css">
-
     <link href="https://fonts.googleapis.com/css?family=Pacifico|Roboto+Condensed" rel="stylesheet">
-    <!-- <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script> -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
 
 
@@ -25,22 +22,15 @@
         <div class = "row space"></div>
         
         <div class = "row d-flex justify-content-center">
-            <!-- <section class="col-1"></section> -->
+  
             <section class = "col-12 col-md-8  text-center color-white mt-5 text-roboto header " id="bgimg">
                     <h1 class = "display-3 text-roboto" style = "font-weight: bold">Friend Finder</h1>
                     <p class = "lead">Find Your Best Match</p>
             </section>
     </div>
-        <!-- <div clas="row">
-            <div class="col-4"></div>
-            <div class = "col-7 jumbotron text-center color-white text-roboto header bgimg ml-5  mt-5 pl-5 w-75">
-                <h1 class = "display-3" style = "font-weight: bold">Friend Finder</h1>
-                <p class = "lead">Find Your Best Match</p>
-            </div>
-            <div class="col-1"> </div>
-        </div> -->
+       
         <div class = "row ">
-            <!-- <section class="col-1"></section> -->
+           
             <section class = "col-12 col-md-8 mt-4 d-flex justify-content-center ml-5" >
                 <form>
                     <div class="form-group ">
@@ -202,8 +192,7 @@
                                         <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
                                             <div id="tempDiv" class="d-flex" >
                                                 <div id="showRec"></div>
-                                                <!-- <div id = "name1" ><p id="showName"></p></div>
-                                                <div id = "image"></div> -->
+                                               
                                             </div>
                                             
                                     </div>
@@ -215,9 +204,7 @@
                 <div class = "row space"></div>
                 <div class = "row space"></div>
                 <div class = "row space"></div>
-               <!-- <div>
-                    <a href="/api/friends">API Friends</a>
-            </div> -->
+               
             </section>
 
             <section class = "col-1"></section>
@@ -229,7 +216,7 @@
             </section>
         </div>
         <div class = "row ">
-                <!-- <section class="col-1"></section> -->
+              
                 <section class = "col-12 col-md-8 mt-4 d-flex justify-content-center ml-5 pl-5 " >
                         <a href="/api/friends">
                             
@@ -237,13 +224,7 @@
                                 <h4><i class="fa fa-arrow-right" aria-hidden="true"></i> See all possible friends </h4></button>
                         </a> </section>
                     </div>
-        <!-- <div class="row">
-                <a href="/api/friends">
-                    <button type="button" class="btn  btn-secondary">
-                        <h4><i class="fa fa-arrow-right" aria-hidden="true"></i> See all possible friends </h4></button>
-                </a> -->
-            <!-- <a href="/api/friends">API Friends</a> -->
-        <!-- </div> -->
+       
 
         <div class = "row space"></div>
         <div class = "row space"></div>
@@ -252,9 +233,7 @@
 
         <div class = "row space"></div>
         <div class = "row space"></div>
-        <!-- <div class = "row space"></div>
-        <div class = "row space"></div> -->
-
+       
 
     </div>
 
@@ -273,7 +252,7 @@
                     currentFriends  = friendsList;
             });
             console.log("in gety",currentFriends);
-            //return currentFriends;
+           
         }
 
 
@@ -313,7 +292,7 @@
             console.log(newFriend);
             $.post("api/friends",newFriend,function(data){
                 if(data){
-                    //currentFriends = findFriends();
+                   
                     console.log("in post",data );
                     console.log("currentFirends",currentFriends);
                     let sumArr=[];
@@ -371,41 +350,12 @@
                         let divShowRec = $('#showRec');
                         divShowRec.append(newUl);
 
-                    //    let mainDiv =  $('<div>');
-                    //    let pShowName = $('#showName');
-                    //    let divName1=$('#name1');
-                    //    pShowName.append(currentFriends[indexArr[i]].name);
-                    //    divName1.append(pShowName);
-                       
-                    //     let divImage = $("#image");
-                    //     let newImg = $('<img>');
-                    //     newImg.attr('src',currentFriends[indexArr[i]].photo);
-                    //     newImg.attr('width', '150');
-                    //     newImg.attr('length', '150');
-                    //     divImage.append(newImg);
-
-                    //     let tempDiv = $('#tempDiv');
-                       
-                    //     tempDiv.append(divName1);
-                    //     tempDiv.append(divImage);
-                    //     mainDiv.append(divName1);
-                    //     mainDiv.append(divImage);
-                    //     tempDiv.append(mainDiv);
-
-                        
+                   
 
 
                     }
                     
-                    // let p = $('#showName');
-                    // p.append(currentFriends[index].name);
-                    // let divImage = $("#image");
-                    // let newImg = $('<img>');
-                    // newImg.attr('src',currentFriends[index].photo);
-                    // newImg.attr('width', '150');
-                    // newImg.attr('length', '150');
-                    // divImage.append(newImg);
-         
+                 
                     $('#name').val("");
                     $('#pic').val("");
                     $('#answer1').val("");
@@ -419,8 +369,7 @@
                     $('#answer9').val("");
                     $('#answer10').val("");
 
-                    // $('#image').empty();
-                    // $('#showName').empty();
+             
  
                 }
             });
